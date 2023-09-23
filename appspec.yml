@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: spring-cicd-0.0.1-SNAPSHOT.jar
+    destination: /var/
+hooks:
+  ApplicationStart:
+    - location: scripts/server_start.sh
+      timeout: 3600
+  ApplicationStop:
+    - location: scripts/server_stop.sh
+      timeout: 3600
